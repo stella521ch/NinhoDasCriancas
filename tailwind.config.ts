@@ -68,8 +68,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "var(--font-sans)", "sans-serif"],
-        leo: [
-          "\"Leo Hates School\"",
+        latin: [
+          "\"KG Midnight Memories\"",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

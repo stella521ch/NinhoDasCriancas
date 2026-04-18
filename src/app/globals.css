@@ -1,7 +1,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* 문막초 해반체 — 한글·한자·전각 등만 담당 (라틴은 아래 Leo로 넘김) */
+/* 문막초 해반체 — 한글·전각 등만 담당 (라틴은 아래 KG로 넘김) */
 @font-face {
   font-family: "문막초 해반체";
   font-style: normal;
@@ -15,15 +15,15 @@
 }
 
 /*
- * Leo Hates School — dafont 공식 zip의「LEO Hates School MC.ttf」를
- * 서브셋 없이 woff2로 변환한 파일(public/fonts). ã õ í 등 라틴 보충 문자 포함.
+ * KG Midnight Memories — dafont「KGMidnightMemories.ttf」woff2 (public/fonts).
+ * 상업 이용 시 저작권자 라이선스 필요: https://www.dafont.com/kg-midnight-memories.font
  */
 @font-face {
-  font-family: "Leo Hates School";
+  font-family: "KG Midnight Memories";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/leo-hates-school.woff2") format("woff2");
+  src: url("/fonts/kg-midnight-memories.woff2") format("woff2");
 }
 
 @tailwind base;
@@ -63,10 +63,10 @@
 
 @layer base {
   :root {
-    /* 스택 순서: 코드포인트별로 unicode-range가 맞는 면만 적용 → 한글=문막초, 라틴=Leo */
-    --font-sans: "문막초 해반체", "Leo Hates School", ui-sans-serif, system-ui,
-      sans-serif;
-    --font-heading: "문막초 해반체", "Leo Hates School", ui-sans-serif,
+    /* unicode-range로 한글=문막초, 그 외(영·포 라틴)=KG Midnight Memories */
+    --font-sans: "문막초 해반체", "KG Midnight Memories", ui-sans-serif,
+      system-ui, sans-serif;
+    --font-heading: "문막초 해반체", "KG Midnight Memories", ui-sans-serif,
       system-ui, sans-serif;
     /* 말 없는 성경 5색 톤: 린넨·먹·올리브·금·테라코타를 세련되게 재해석 */
     --background: oklch(0.985 0.012 95);
@@ -163,15 +163,8 @@
   }
   html {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  }
-  /*
-   * PT: Leo MC는 웨이트 400만 있어 font-medium/semibold 합성 볼드 시
-   * 악센트 글자(Í ã 등)만 시스템 폰트로 갈라지는 브라우저가 있음 → 합성 끔.
-   * 손글씨가 얇아 동일 rem보다 작게 보이므로 루트만 소폭 확대(한글과 시각 균형).
-   */
-  html[data-locale="pt"] {
+    /* KO/PT 전환 시에도 동일 규칙: 단일 웨이트 폰트 합성 볼드로 악센트만 깨지는 현상 방지 */
     font-synthesis: none;
-    font-size: 106.25%;
   }
   ::selection {
     background: oklch(0.45 0.08 150 / 0.22);
