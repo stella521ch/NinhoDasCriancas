@@ -6,7 +6,7 @@ import { useLocale } from "@/components/i18n/locale-provider";
 import { cn } from "@/lib/utils";
 
 export function Footer({ className }: { className?: string }) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
 
   const footerLinks = [
     { href: "/", label: t.nav.intro },
@@ -25,7 +25,19 @@ export function Footer({ className }: { className?: string }) {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-md space-y-3">
             <p className="font-heading text-base font-semibold tracking-tight text-foreground">
-              {t.footer.title}
+              {(() => {
+                const parts = t.footer.title.split(" · ");
+                if (parts.length < 2) return t.footer.title;
+                return (
+                  <>
+                    {parts[0]}
+                    {" · "}
+                    <span className="font-leo font-normal tracking-normal">
+                      {parts.slice(1).join(" · ")}
+                    </span>
+                  </>
+                );
+              })()}
             </p>
             <p className="leading-relaxed text-muted-foreground/95">
               {t.footer.description}
@@ -50,7 +62,18 @@ export function Footer({ className }: { className?: string }) {
           </nav>
         </div>
         <p className="text-xs text-muted-foreground/90">
-          © {new Date().getFullYear()} Children&apos;s Nest. {t.footer.rights}
+          © {new Date().getFullYear()}{" "}
+          <span className="font-leo text-[0.95em] tracking-normal text-muted-foreground">
+            Children&apos;s Nest
+          </span>
+          .{" "}
+          {locale === "ko" ? (
+            <span className="font-leo text-[0.95em] tracking-normal">
+              {t.footer.rights}
+            </span>
+          ) : (
+            t.footer.rights
+          )}
         </p>
       </div>
     </footer>

@@ -75,7 +75,7 @@ export function Navbar() {
           <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
           </span>
-          <span className="text-[0.9rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+          <span className="font-leo text-[0.95rem] font-normal tracking-[0.12em] text-muted-foreground">
             Children&apos;s Nest
           </span>
         </Link>
@@ -87,20 +87,19 @@ export function Navbar() {
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
-          <LanguageToggle className="ml-2 shrink-0" />
           <Link
             href="/donate"
             className={cn(
               buttonVariants({ size: "default" }),
-              "ml-2 shrink-0 text-base shadow-glow-sm transition-[box-shadow,transform] hover:shadow-glow"
+              "ml-4 shrink-0 text-base shadow-glow-sm transition-[box-shadow,transform] hover:shadow-glow"
             )}
           >
             {t.nav.donateCta}
           </Link>
+          <LanguageToggle className="ml-2 shrink-0" />
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
-          <LanguageToggle />
           <Link
             href="/donate"
             className={cn(
@@ -110,6 +109,7 @@ export function Navbar() {
           >
             {t.nav.donateMobile}
           </Link>
+          <LanguageToggle />
           <Button
             type="button"
             variant="ghost"

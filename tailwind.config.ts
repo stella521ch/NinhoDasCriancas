@@ -52,6 +52,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "var(--font-sans)", "sans-serif"],
+        leo: ["\"Leo Hates School\"", "cursive", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "0 1px 2px oklch(0.28 0.03 55 / 0.05), 0 18px 40px -22px oklch(0.28 0.03 55 / 0.1)",

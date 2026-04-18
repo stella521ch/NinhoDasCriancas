@@ -4,6 +4,7 @@ import { NewsCategoryTabs } from "@/components/news/news-category-tabs";
 import { NewsPostCard } from "@/components/news/news-post-card";
 import { useLocale } from "@/components/i18n/locale-provider";
 import type { Post } from "@/lib/types/post";
+import { cn } from "@/lib/utils";
 
 export function NewsPageView({
   posts,
@@ -12,12 +13,17 @@ export function NewsPageView({
   posts: Post[];
   activeTabId: string;
 }) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
       <header className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p
+          className={cn(
+            "text-xs font-semibold uppercase tracking-[0.2em] text-primary",
+            locale === "ko" && "font-leo"
+          )}
+        >
           {t.news.kicker}
         </p>
         <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

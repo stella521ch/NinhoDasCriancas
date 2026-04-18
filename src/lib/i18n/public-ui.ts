@@ -49,6 +49,19 @@ export type PublicUiStrings = {
     tabsAria: string;
     tabLabels: Record<string, string>;
   };
+  newsArticle: {
+    backToList: string;
+    relatedHeading: string;
+    relatedEmpty: string;
+    ctaTitle: string;
+    ctaBody: string;
+    donateButton: string;
+    moreImagesHeading: string;
+    translating: string;
+    heroImageAltSuffix: string;
+    extraImageAltSuffix: string;
+    inlineImageAlt: string;
+  };
   missionImageAlt: string;
   donate: {
     kicker: string;
@@ -179,6 +192,19 @@ const ko: PublicUiStrings = {
       prayer: "기도 제목",
       impact: "변화 이야기",
     },
+  },
+  newsArticle: {
+    backToList: "뉴스 목록으로",
+    relatedHeading: "관련 소식",
+    relatedEmpty: "표시할 관련 글이 없습니다.",
+    ctaTitle: "한 아이의 오후를 함께 지켜 주세요",
+    ctaBody: "후원은 식사·교육·공간 유지로 바로 이어집니다.",
+    donateButton: "후원하기",
+    moreImagesHeading: "추가 이미지",
+    translating: "번역 중…",
+    heroImageAltSuffix: "대표 이미지",
+    extraImageAltSuffix: "추가 사진",
+    inlineImageAlt: "본문 이미지",
   },
   missionImageAlt:
     "아이들과 함께하는 활동 모습을 상징하는 플레이스홀더 이미지",
@@ -359,6 +385,20 @@ const pt: PublicUiStrings = {
       prayer: "Oração",
       impact: "Histórias de impacto",
     },
+  },
+  newsArticle: {
+    backToList: "Voltar à lista de notícias",
+    relatedHeading: "Relacionadas",
+    relatedEmpty: "Não há posts relacionados.",
+    ctaTitle: "Ajude a proteger a tarde de uma criança",
+    ctaBody:
+      "Sua doação vira refeições, aprendizado e manutenção do espaço.",
+    donateButton: "Apoiar",
+    moreImagesHeading: "Mais imagens",
+    translating: "Traduzindo…",
+    heroImageAltSuffix: "imagem de capa",
+    extraImageAltSuffix: "foto adicional",
+    inlineImageAlt: "Imagem no texto",
   },
   missionImageAlt:
     "Imagem ilustrativa de crianças em atividades no espaço",

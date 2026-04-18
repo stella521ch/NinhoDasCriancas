@@ -1,13 +1,24 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* 문막초 해반체 — 문막읍 농촌중심지활성화사업, 눈누 CDN */
 @font-face {
-  font-family: "윤초록우산어린이 만세";
+  font-family: "문막초 해반체";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2604-1@1.0/MUNMAK_HAEBANCHE.woff2")
     format("woff2");
+}
+
+/* Leo Hates School — OFL, CDNFonts 호스트 (영문 표기용) */
+@font-face {
+  font-family: "Leo Hates School";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.cdnfonts.com/s/52991/Leo%20hates%20school.woff")
+    format("woff");
 }
 
 @tailwind base;
@@ -36,8 +47,8 @@
 
 @layer base {
   :root {
-    --font-sans: "윤초록우산어린이 만세", ui-sans-serif, system-ui, sans-serif;
-    --font-heading: "윤초록우산어린이 만세", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "문막초 해반체", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "문막초 해반체", ui-sans-serif, system-ui, sans-serif;
     /* 말 없는 성경 5색 톤: 린넨·먹·올리브·금·테라코타를 세련되게 재해석 */
     --background: oklch(0.985 0.012 95);
     --foreground: oklch(0.28 0.035 55);
