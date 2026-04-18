@@ -6,9 +6,11 @@ import {
   useInView,
   useReducedMotion,
 } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
 
+import { useLocale } from "@/components/i18n/locale-provider";
 import { editorialEase } from "@/lib/motion";
-import { useEffect, useRef, useState } from "react";
+import type { Locale } from "@/lib/i18n/types";
 
 function CountValue({
   from,
@@ -36,65 +38,82 @@ function CountValue({
   return <span ref={ref}>{val}</span>;
 }
 
-const stats = [
-  {
-    key: "y2018",
-    label: "사역 시작",
-    node: (
-      <span className="font-heading text-4xl font-semibold sm:text-5xl">
-        <CountValue from={2008} to={2018} duration={1.4} />
-        <span className="text-2xl sm:text-3xl">년</span>
-      </span>
-    ),
-  },
-  {
-    key: "y2025",
-    label: "어린이 둥지 설립",
-    node: (
-      <span className="font-heading text-4xl font-semibold sm:text-5xl">
-        <CountValue from={2018} to={2025} duration={1.1} />
-        <span className="text-2xl sm:text-3xl">년</span>
-      </span>
-    ),
-  },
-  {
-    key: "kids",
-    label: "돌봄 아동",
-    node: (
-      <span className="font-heading text-4xl font-semibold sm:text-5xl">
-        <CountValue from={0} to={30} duration={1.8} />
-        <span className="text-primary">+</span>
-      </span>
-    ),
-  },
-  {
-    key: "days",
-    label: "주당 운영",
-    node: (
-      <span className="font-heading text-4xl font-semibold sm:text-5xl">
-        주 <CountValue from={0} to={5} duration={1.2} />
-        <span className="text-2xl sm:text-3xl">일</span>
-      </span>
-    ),
-  },
-] as const;
+function useStatBlocks(locale: Locale, labels: ReturnType<typeof useLocale>["t"]["stats"]["labels"]) {
+  return useMemo(
+    () => [
+      {
+        key: "y2018",
+        label: labels.y2018,
+        node: (
+          <span className="font-heading text-4xl font-semibold sm:text-5xl">
+            <CountValue from={2008} to={2018} duration={1.4} />
+            <span className="text-2xl sm:text-3xl">
+              {locale === "pt" ? " (início)" : "년"}
+            </span>
+          </span>
+        ),
+      },
+      {
+        key: "y2025",
+        label: labels.y2025,
+        node: (
+          <span className="font-heading text-4xl font-semibold sm:text-5xl">
+            <CountValue from={2018} to={2025} duration={1.1} />
+            <span className="text-2xl sm:text-3xl">
+              {locale === "pt" ? " (Ninho)" : "년"}
+            </span>
+          </span>
+        ),
+      },
+      {
+        key: "kids",
+        label: labels.kids,
+        node: (
+          <span className="font-heading text-4xl font-semibold sm:text-5xl">
+            <CountValue from={0} to={30} duration={1.8} />
+            <span className="text-primary">+</span>
+          </span>
+        ),
+      },
+      {
+        key: "days",
+        label: labels.days,
+        node: (
+          <span className="font-heading text-4xl font-semibold sm:text-5xl">
+            {locale === "ko" ? (
+              <>
+                주 <CountValue from={0} to={5} duration={1.2} />
+                <span className="text-2xl sm:text-3xl">일</span>
+              </>
+            ) : (
+              <>
+                <CountValue from={0} to={5} duration={1.2} />
+                <span className="text-2xl sm:text-3xl"> dias/sem.</span>
+              </>
+            )}
+          </span>
+        ),
+      },
+    ],
+    [locale, labels]
+  );
+}
 
 export function StatsSection() {
   const reduce = useReducedMotion();
+  const { locale, t } = useLocale();
+  const stats = useStatBlocks(locale, t.stats.labels);
 
   return (
     <section className="border-y border-border/50 bg-gradient-to-b from-muted/25 via-muted/10 to-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          By the numbers
+          {t.stats.kicker}
         </p>
         <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          숫자로 보는 둥지
+          {t.stats.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-muted-foreground">
-          후원과 기도로 쌓인 시간입니다. 실제 수치는 운영 상황에 따라
-          갱신됩니다.
-        </p>
+        <p className="mt-4 max-w-2xl text-muted-foreground">{t.stats.lead}</p>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (

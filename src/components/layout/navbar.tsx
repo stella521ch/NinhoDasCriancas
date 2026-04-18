@@ -4,17 +4,13 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
+import { LanguageToggle } from "@/components/i18n/language-toggle";
+import { useLocale } from "@/components/i18n/locale-provider";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { editorialEase } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { href: "/", label: "소개" },
-  { href: "/news", label: "뉴스" },
-  { href: "/donate", label: "후원" },
-] as const;
 
 function NavLink({
   href,
@@ -26,7 +22,8 @@ function NavLink({
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
-  const active = pathname === href || (href !== "/" && pathname.startsWith(href));
+  const active =
+    pathname === href || (href !== "/" && pathname.startsWith(href));
 
   return (
     <Link
@@ -47,6 +44,17 @@ function NavLink({
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
+
+  const navItems = useMemo(
+    () =>
+      [
+        { href: "/", label: t.nav.intro },
+        { href: "/news", label: t.nav.news },
+        { href: "/donate", label: t.nav.donate },
+      ] as const,
+    [t]
+  );
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -62,8 +70,8 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: editorialEase }}
     >
-      <div className="mx-auto flex h-[110px] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" className="group flex flex-col leading-tight">
+      <div className="mx-auto flex h-[110px] max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
+        <Link href="/" className="group flex min-w-0 flex-col leading-tight">
           <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
           </span>
@@ -73,24 +81,26 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-2 md:flex"
-          aria-label="주요 메뉴"
+          className="hidden min-w-0 flex-1 items-center justify-end gap-2 md:flex"
+          aria-label={t.nav.ariaMainNav}
         >
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
+          <LanguageToggle className="ml-2 shrink-0" />
           <Link
             href="/donate"
             className={cn(
               buttonVariants({ size: "default" }),
-              "ml-4 text-base shadow-glow-sm transition-[box-shadow,transform] hover:shadow-glow"
+              "ml-2 shrink-0 text-base shadow-glow-sm transition-[box-shadow,transform] hover:shadow-glow"
             )}
           >
-            후원하기
+            {t.nav.donateCta}
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
+          <LanguageToggle />
           <Link
             href="/donate"
             className={cn(
@@ -98,7 +108,7 @@ export function Navbar() {
               "text-base shadow-glow-sm"
             )}
           >
-            후원
+            {t.nav.donateMobile}
           </Link>
           <Button
             type="button"
@@ -107,7 +117,7 @@ export function Navbar() {
             className="shrink-0"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+            aria-label={open ? t.nav.menuClose : t.nav.menuOpen}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -124,14 +134,15 @@ export function Navbar() {
             initial={reduceMotion ? false : { height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={
-              reduceMotion
-                ? { opacity: 0 }
-                : { height: 0, opacity: 0 }
+              reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }
             }
-            transition={{ duration: reduceMotion ? 0.15 : 0.35, ease: editorialEase }}
+            transition={{
+              duration: reduceMotion ? 0.15 : 0.35,
+              ease: editorialEase,
+            }}
           >
             <div className="overflow-hidden px-4 py-5">
-              <nav className="flex flex-col gap-4" aria-label="모바일 메뉴">
+              <nav className="flex flex-col gap-4" aria-label={t.nav.ariaMobileNav}>
                 {navItems.map((item) => (
                   <NavLink
                     key={item.href}

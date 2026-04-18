@@ -1,14 +1,19 @@
+"use client";
+
 import Link from "next/link";
 
+import { useLocale } from "@/components/i18n/locale-provider";
 import { cn } from "@/lib/utils";
 
-const footerLinks = [
-  { href: "/", label: "소개" },
-  { href: "/news", label: "뉴스" },
-  { href: "/donate", label: "후원" },
-] as const;
-
 export function Footer({ className }: { className?: string }) {
+  const { t } = useLocale();
+
+  const footerLinks = [
+    { href: "/", label: t.nav.intro },
+    { href: "/news", label: t.nav.news },
+    { href: "/donate", label: t.nav.donate },
+  ] as const;
+
   return (
     <footer
       className={cn(
@@ -20,14 +25,13 @@ export function Footer({ className }: { className?: string }) {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-md space-y-3">
             <p className="font-heading text-base font-semibold tracking-tight text-foreground">
-              어린이 둥지 · Children&apos;s Nest
+              {t.footer.title}
             </p>
             <p className="leading-relaxed text-muted-foreground/95">
-              브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역입니다. 안전한
-              공간과 따뜻한 식사, 교육과 놀이로 한 오후를 지켜 줍니다.
+              {t.footer.description}
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="푸터 링크">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
@@ -41,12 +45,12 @@ export function Footer({ className }: { className?: string }) {
               href="/admin/login"
               className="font-medium text-foreground/50 underline-offset-4 transition-colors hover:text-foreground/80 hover:underline"
             >
-              관리자 로그인
+              {t.footer.adminLogin}
             </Link>
           </nav>
         </div>
         <p className="text-xs text-muted-foreground/90">
-          © {new Date().getFullYear()} Children&apos;s Nest. All rights reserved.
+          © {new Date().getFullYear()} Children&apos;s Nest. {t.footer.rights}
         </p>
       </div>
     </footer>

@@ -3,15 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { SectionReveal } from "@/components/home/section-reveal";
+import { useLocale } from "@/components/i18n/locale-provider";
 import { editorialEase } from "@/lib/motion";
-
-const steps = [
-  { title: "하교 후 도착", body: "등원·건강 체크로 하루를 안전하게 시작합니다." },
-  { title: "간식 · 식사", body: "에너지를 보충하고 함께 먹는 시간을 가집니다." },
-  { title: "학습 및 교육", body: "숙제·독서·팀 활동으로 학교를 돕습니다." },
-  { title: "다양한 활동", body: "미술·음악·운동 등 창의와 웃음을 나눕니다." },
-  { title: "귀가", body: "보호자 연락과 귀가 동선을 확인하며 마무리합니다." },
-] as const;
 
 const listVariants = {
   hidden: {},
@@ -29,18 +22,17 @@ const itemVariants = {
 
 export function DailyFlowSection() {
   const reduce = useReducedMotion();
+  const { t } = useLocale();
 
   return (
     <SectionReveal className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-        Daily flow
+        {t.dailyFlow.kicker}
       </p>
       <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-        하루의 흐름
+        {t.dailyFlow.title}
       </h2>
-      <p className="mt-4 max-w-2xl text-muted-foreground">
-        방과 후 한 오후가 어떻게 이어지는지 타임라인으로 정리했습니다.
-      </p>
+      <p className="mt-4 max-w-2xl text-muted-foreground">{t.dailyFlow.lead}</p>
 
       <motion.ol
         className="relative mt-12 space-y-0 border-l border-primary/25 pl-8 sm:pl-10"
@@ -49,7 +41,7 @@ export function DailyFlowSection() {
         whileInView={reduce ? undefined : "show"}
         viewport={{ once: true, margin: "-50px" }}
       >
-        {steps.map((step, i) => (
+        {t.dailyFlow.steps.map((step, i) => (
           <motion.li
             key={step.title}
             className="relative pb-12 last:pb-0"

@@ -4,12 +4,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useLocale } from "@/components/i18n/locale-provider";
 import type { Post } from "@/lib/types/post";
 
-function formatDate(iso: string | null) {
+function formatDate(iso: string | null, localeTag: string) {
   if (!iso) return "";
   try {
-    return new Intl.DateTimeFormat("ko", {
+    return new Intl.DateTimeFormat(localeTag, {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -37,6 +38,8 @@ const itemVariants = {
 
 export function StoriesPreviewCards({ posts }: { posts: Post[] }) {
   const reduce = useReducedMotion();
+  const { locale } = useLocale();
+  const dateLocale = locale === "pt" ? "pt-BR" : "ko";
 
   return (
     <motion.ul
@@ -56,7 +59,11 @@ export function StoriesPreviewCards({ posts }: { posts: Post[] }) {
               {post.thumbnail_url ? (
                 <Image
                   src={post.thumbnail_url}
-                  alt={`${post.title} 썸네일`}
+                  alt={
+                    locale === "pt"
+                      ? `${post.title} — miniatura`
+                      : `${post.title} 썸네일`
+                  }
                   fill
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   sizes="(min-width: 768px) 33vw, 100vw"
@@ -76,7 +83,7 @@ export function StoriesPreviewCards({ posts }: { posts: Post[] }) {
                 className="text-xs text-muted-foreground"
                 dateTime={post.published_at ?? undefined}
               >
-                {formatDate(post.published_at)}
+                {formatDate(post.published_at, dateLocale)}
               </time>
               <h3 className="mt-2 font-heading text-lg font-semibold leading-snug text-foreground group-hover:text-primary">
                 {post.title}

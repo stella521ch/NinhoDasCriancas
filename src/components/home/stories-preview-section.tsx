@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 
+import { useLocale } from "@/components/i18n/locale-provider";
 import { StoriesPreviewCards } from "@/components/home/stories-preview-cards";
 import { SectionReveal } from "@/components/home/section-reveal";
 import type { StoriesHeadingCopy } from "@/lib/data/home-page-content";
@@ -12,6 +15,8 @@ export function StoriesPreviewSection({
   posts: Post[];
   heading: StoriesHeadingCopy;
 }) {
+  const { t } = useLocale();
+
   return (
     <SectionReveal className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -30,7 +35,7 @@ export function StoriesPreviewSection({
           href="/news"
           className="text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
-          전체 뉴스 보기 →
+          {t.stories.viewAllNews}
         </Link>
       </div>
 

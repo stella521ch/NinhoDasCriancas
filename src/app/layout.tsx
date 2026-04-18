@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { LocaleProvider } from "@/components/i18n/locale-provider";
 import { Footer, Navbar } from "@/components/layout";
 import { cn } from "@/lib/utils";
 
@@ -41,9 +42,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className={cn("theme min-h-full")}>
       <body className="flex min-h-dvh flex-col font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LocaleProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

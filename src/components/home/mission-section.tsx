@@ -3,12 +3,14 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
+import { useLocale } from "@/components/i18n/locale-provider";
 import { SectionReveal } from "@/components/home/section-reveal";
 import type { MissionSectionCopy } from "@/lib/data/home-page-content";
 import { editorialDuration, editorialEase } from "@/lib/motion";
 
 export function MissionSection({ copy }: { copy: MissionSectionCopy }) {
   const reduce = useReducedMotion();
+  const { t } = useLocale();
 
   return (
     <SectionReveal id="mission" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
@@ -41,7 +43,7 @@ export function MissionSection({ copy }: { copy: MissionSectionCopy }) {
           >
             <Image
               src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=900&q=80"
-              alt="아이들과 함께하는 활동 모습을 상징하는 플레이스홀더 이미지"
+              alt={t.missionImageAlt}
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 42vw, 100vw"

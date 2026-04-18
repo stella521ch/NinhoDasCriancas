@@ -1,19 +1,5 @@
-import {
-  DailyFlowSection,
-  DonationCtaSection,
-  HeroSection,
-  MissionSection,
-  ProvideSection,
-  StatsSection,
-  StoriesPreviewSection,
-} from "@/components/home";
-import {
-  getHomeMarketingContent,
-  pickDonationCtaCopy,
-  pickHeroCopy,
-  pickMissionCopy,
-  pickStoriesHeadingCopy,
-} from "@/lib/data/home-page-content";
+import { HomePageClient } from "@/components/home/home-page-client";
+import { getHomeMarketingContent } from "@/lib/data/home-page-content";
 import { getLatestPublishedPosts } from "@/lib/data/posts";
 import type { Metadata } from "next";
 
@@ -29,18 +15,5 @@ export default async function HomePage() {
   const posts = await getLatestPublishedPosts(3);
   const marketing = await getHomeMarketingContent();
 
-  return (
-    <>
-      <HeroSection copy={pickHeroCopy(marketing)} />
-      <MissionSection copy={pickMissionCopy(marketing)} />
-      <ProvideSection />
-      <DailyFlowSection />
-      <StatsSection />
-      <StoriesPreviewSection
-        posts={posts}
-        heading={pickStoriesHeadingCopy(marketing)}
-      />
-      <DonationCtaSection copy={pickDonationCtaCopy(marketing)} />
-    </>
-  );
+  return <HomePageClient marketing={marketing} posts={posts} />;
 }
