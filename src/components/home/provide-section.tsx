@@ -84,7 +84,8 @@ function Card({
 }
 
 export function ProvideSection() {
-  const reduce = useReducedMotion();
+  /** Framer는 `boolean | null`을 반환해 빌드 시 `boolean` prop과 충돌하지 않도록 명시 */
+  const reduce = useReducedMotion() === true;
 
   if (reduce) {
     return (
