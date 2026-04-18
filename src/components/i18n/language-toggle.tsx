@@ -11,7 +11,7 @@ export function LanguageToggle({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex items-center rounded-full border border-border/70 bg-muted/40 p-0.5 text-sm font-medium backdrop-blur-sm",
+        "flex items-center rounded-full border border-border/70 bg-muted/40 p-0.5 text-sm font-normal backdrop-blur-sm",
         className
       )}
       role="group"

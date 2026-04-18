@@ -111,7 +111,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
         aria-atomic="true"
       >
         <motion.div
-          className="pointer-events-auto mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 pb-8 pt-16 text-white sm:px-6 sm:pb-10"
+          className="pointer-events-auto mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 pb-8 pt-16 text-white sm:gap-6 sm:px-6 sm:pb-10"
           variants={overlayContainerDyn}
           initial="hidden"
           animate="show"
@@ -125,7 +125,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           <motion.h1
             variants={overlayItem}
             id="hero-heading"
-            className="max-w-3xl font-heading text-2xl font-semibold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl"
+            className="max-w-3xl font-heading text-2xl font-semibold leading-[1.38] tracking-tight sm:text-4xl sm:leading-[1.32] md:text-5xl md:leading-[1.28]"
           >
             {copy.heroHeadingMain}
             <span className="text-primary drop-shadow-sm">
@@ -134,7 +134,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           </motion.h1>
           <motion.p
             variants={overlayItem}
-            className="max-w-xl text-sm leading-relaxed text-white/90 sm:text-base"
+            className="max-w-xl text-sm leading-[1.75] text-white/90 sm:text-base sm:leading-[1.72]"
           >
             {copy.heroBody}
           </motion.p>

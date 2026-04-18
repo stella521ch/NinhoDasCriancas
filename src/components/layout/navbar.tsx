@@ -30,7 +30,7 @@ function NavLink({
       href={href}
       onClick={onNavigate}
       className={cn(
-        "rounded-full px-3 py-1.5 text-lg font-medium transition-colors",
+        "rounded-full px-3 py-1.5 text-lg font-normal transition-colors",
         active
           ? "bg-primary/10 text-primary"
           : "text-foreground/75 hover:bg-muted/60 hover:text-foreground"

@@ -31,10 +31,13 @@
 @tailwind utilities;
 
 @layer components {
-  /* typography prose-lg 본문: 18px → 22px (+4px), 하위 em 비율은 그대로 상속됨 */
+  /* typography prose-lg 본문: 18px → 22px (+4px) */
   .prose.prose-lg {
     font-size: 1.375rem;
-    line-height: 1.64;
+    line-height: 1.78;
+  }
+  .prose.prose-lg :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    line-height: 1.75;
   }
 }
 
@@ -143,6 +146,7 @@
     outline-offset: 2px;
   }
   body {
+    line-height: 1.65;
     background-color: var(--background);
     color: var(--foreground);
     background-image:
@@ -159,6 +163,15 @@
   }
   html {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  /*
+   * PT: Leo MC는 웨이트 400만 있어 font-medium/semibold 합성 볼드 시
+   * 악센트 글자(Í ã 등)만 시스템 폰트로 갈라지는 브라우저가 있음 → 합성 끔.
+   * 손글씨가 얇아 동일 rem보다 작게 보이므로 루트만 소폭 확대(한글과 시각 균형).
+   */
+  html[data-locale="pt"] {
+    font-synthesis: none;
+    font-size: 106.25%;
   }
   ::selection {
     background: oklch(0.45 0.08 150 / 0.22);

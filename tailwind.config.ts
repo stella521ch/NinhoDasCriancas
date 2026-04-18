@@ -11,14 +11,14 @@ const config: Config = {
     extend: {
       /* 기본 Tailwind 단계별 +4px (0.25rem @16px) */
       fontSize: {
-        xs: ["1rem", { lineHeight: "1.25rem" }],
-        sm: ["1.125rem", { lineHeight: "1.375rem" }],
-        base: ["1.25rem", { lineHeight: "1.625rem" }],
-        lg: ["1.375rem", { lineHeight: "1.75rem" }],
-        xl: ["1.5rem", { lineHeight: "1.75rem" }],
-        "2xl": ["1.75rem", { lineHeight: "2rem" }],
-        "3xl": ["2.125rem", { lineHeight: "2.5rem" }],
-        "4xl": ["2.5rem", { lineHeight: "2.75rem" }],
+        xs: ["1rem", { lineHeight: "1.4rem" }],
+        sm: ["1.125rem", { lineHeight: "1.55rem" }],
+        base: ["1.25rem", { lineHeight: "1.8125rem" }],
+        lg: ["1.375rem", { lineHeight: "1.9375rem" }],
+        xl: ["1.5rem", { lineHeight: "1.9375rem" }],
+        "2xl": ["1.75rem", { lineHeight: "2.25rem" }],
+        "3xl": ["2.125rem", { lineHeight: "2.75rem" }],
+        "4xl": ["2.5rem", { lineHeight: "3.125rem" }],
         "5xl": ["3.25rem", { lineHeight: "1" }],
         "6xl": ["4rem", { lineHeight: "1" }],
         "7xl": ["4.75rem", { lineHeight: "1" }],

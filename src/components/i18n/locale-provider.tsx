@@ -26,7 +26,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LOCALE_STORAGE_KEY);
-      if (raw === "pt" || raw === "ko") setLocaleState(raw);
+      if (raw === "pt" || raw === "ko") {
+        setLocaleState(raw);
+        document.documentElement.dataset.locale = raw;
+        document.documentElement.lang = raw === "pt" ? "pt-BR" : "ko";
+      }
     } catch {
       /* ignore */
     }
@@ -40,10 +44,12 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
       /* ignore */
     }
     document.documentElement.lang = next === "pt" ? "pt-BR" : "ko";
+    document.documentElement.dataset.locale = next;
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = locale === "pt" ? "pt-BR" : "ko";
+    document.documentElement.dataset.locale = locale;
   }, [locale]);
 
   const t = useMemo(() => getPublicUi(locale), [locale]);

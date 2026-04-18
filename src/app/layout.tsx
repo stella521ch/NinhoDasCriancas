@@ -40,7 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={cn("theme min-h-full")}>
+    <html
+      lang="ko"
+      className={cn("theme min-h-full")}
+      data-locale="ko"
+      suppressHydrationWarning
+    >
       <body className="flex min-h-dvh flex-col font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]">
         <LocaleProvider>
           <Navbar />
