@@ -54,7 +54,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
-      <div className="mx-auto flex h-[4.875rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-[1500px] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="group flex flex-col leading-tight">
           <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
