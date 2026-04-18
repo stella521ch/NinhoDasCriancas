@@ -15,8 +15,8 @@
 }
 
 /*
- * Leo Hates School — dafont 배포본과 동일 계열의 웹용 woff2 (public/fonts)
- * CDNFonts .woff는 손글씨 느낌이 다른 경우가 있어 자체 호스팅으로 통일
+ * Leo Hates School — dafont 공식 zip의「LEO Hates School MC.ttf」를
+ * 서브셋 없이 woff2로 변환한 파일(public/fonts). ã õ í 등 라틴 보충 문자 포함.
  */
 @font-face {
   font-family: "Leo Hates School";
