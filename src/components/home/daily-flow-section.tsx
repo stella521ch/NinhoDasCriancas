@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { SectionReveal } from "@/components/home/section-reveal";
+import { editorialEase } from "@/lib/motion";
 
 const steps = [
   { title: "하교 후 도착", body: "등원·건강 체크로 하루를 안전하게 시작합니다." },
@@ -22,7 +23,7 @@ const itemVariants = {
   show: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.38, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.48, ease: editorialEase },
   },
 };
 

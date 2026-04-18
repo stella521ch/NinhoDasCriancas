@@ -3,6 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
+import { editorialDuration, editorialEase } from "@/lib/motion";
+
 type SectionRevealProps = {
   id?: string;
   className?: string;
@@ -16,10 +18,13 @@ export function SectionReveal({ id, className, children }: SectionRevealProps) {
     <motion.section
       id={id}
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 20, filter: "blur(6px)" }}
+      initial={reduce ? false : { opacity: 0, y: 32, filter: "blur(8px)" }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-72px", amount: 0.2 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: "-80px", amount: 0.15 }}
+      transition={{
+        duration: reduce ? 0.01 : editorialDuration.section,
+        ease: editorialEase,
+      }}
     >
       {children}
     </motion.section>

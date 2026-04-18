@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+
+import { editorialEase } from "@/lib/motion";
 import {
   BookOpen,
   Heart,
@@ -45,21 +47,31 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: editorialEase },
+  },
 };
 
 function Card({
   title,
   body,
   icon: Icon,
+  reduce,
 }: {
   title: string;
   body: string;
   icon: (typeof items)[number]["icon"];
+  reduce: boolean;
 }) {
   return (
-    <div className="flex h-full flex-col rounded-xl border border-border/70 bg-card/90 p-5 shadow-sm ring-1 ring-foreground/5">
+    <motion.div
+      className="flex h-full flex-col rounded-xl border border-border/70 bg-card/90 p-5 shadow-sm ring-1 ring-foreground/5"
+      whileHover={reduce ? undefined : { y: -5, transition: { duration: 0.28, ease: editorialEase } }}
+      transition={{ type: "spring", stiffness: 320, damping: 26 }}
+    >
       <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
         <Icon className="size-5" aria-hidden />
       </div>
@@ -67,7 +79,7 @@ function Card({
         {title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
-    </div>
+    </motion.div>
   );
 }
 
@@ -92,7 +104,7 @@ export function ProvideSection() {
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {items.map((entry) => (
               <li key={entry.title}>
-                <Card {...entry} />
+                <Card {...entry} reduce />
               </li>
             ))}
           </ul>
@@ -130,7 +142,7 @@ export function ProvideSection() {
               variants={item}
               className="h-full [list-style:none]"
             >
-              <Card {...entry} />
+              <Card {...entry} reduce={reduce} />
             </motion.li>
           ))}
         </motion.ul>

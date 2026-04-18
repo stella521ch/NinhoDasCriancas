@@ -6,6 +6,8 @@ import {
   useInView,
   useReducedMotion,
 } from "framer-motion";
+
+import { editorialEase } from "@/lib/motion";
 import { useEffect, useRef, useState } from "react";
 
 function CountValue({
@@ -101,7 +103,12 @@ export function StatsSection() {
               initial={reduce ? false : { opacity: 0, y: 12 }}
               whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.06, duration: 0.45 }}
+              transition={{
+                delay: i * 0.08,
+                duration: 0.52,
+                ease: editorialEase,
+              }}
+              whileHover={reduce ? undefined : { y: -3 }}
               className="rounded-2xl border border-border/60 bg-card/90 p-6 shadow-soft ring-1 ring-foreground/[0.05]"
             >
               <div className="text-foreground">{s.node}</div>

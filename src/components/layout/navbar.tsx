@@ -1,11 +1,13 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
+import { editorialEase } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -44,6 +46,7 @@ function NavLink({
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -53,7 +56,12 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
+    <motion.header
+      className="sticky top-0 z-50 border-b border-border/50 bg-background/80 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-background/65"
+      initial={reduceMotion ? false : { y: -16, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.55, ease: editorialEase }}
+    >
       <div className="mx-auto flex h-[110px] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="group flex flex-col leading-tight">
           <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
@@ -107,23 +115,36 @@ export function Navbar() {
         </div>
       </div>
 
-      {open ? (
-        <div
-          id="mobile-nav"
-          className="border-t border-border/50 bg-background/95 px-4 py-5 backdrop-blur-xl md:hidden"
-        >
-          <nav className="flex flex-col gap-4" aria-label="모바일 메뉴">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.href}
-                href={item.href}
-                label={item.label}
-                onNavigate={() => setOpen(false)}
-              />
-            ))}
-          </nav>
-        </div>
-      ) : null}
-    </header>
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.div
+            key="mobile-nav"
+            id="mobile-nav"
+            className="border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden"
+            initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={
+              reduceMotion
+                ? { opacity: 0 }
+                : { height: 0, opacity: 0 }
+            }
+            transition={{ duration: reduceMotion ? 0.15 : 0.35, ease: editorialEase }}
+          >
+            <div className="overflow-hidden px-4 py-5">
+              <nav className="flex flex-col gap-4" aria-label="모바일 메뉴">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.href}
+                    href={item.href}
+                    label={item.label}
+                    onNavigate={() => setOpen(false)}
+                  />
+                ))}
+              </nav>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </motion.header>
   );
 }
