@@ -81,7 +81,7 @@ export function StatsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-y border-border/60 bg-gradient-to-b from-muted/20 to-background py-20 sm:py-28">
+    <section className="border-y border-border/50 bg-gradient-to-b from-muted/25 via-muted/10 to-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           By the numbers
@@ -102,7 +102,7 @@ export function StatsSection() {
               whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.06, duration: 0.45 }}
-              className="rounded-2xl border border-border/70 bg-card/95 p-6 shadow-sm ring-1 ring-foreground/5"
+              className="rounded-2xl border border-border/60 bg-card/90 p-6 shadow-soft ring-1 ring-foreground/[0.05]"
             >
               <div className="text-foreground">{s.node}</div>
               <p className="mt-3 text-sm font-medium text-muted-foreground">

@@ -12,17 +12,17 @@ export function Footer({ className }: { className?: string }) {
   return (
     <footer
       className={cn(
-        "border-t border-border/80 bg-muted/30 text-sm text-muted-foreground",
+        "border-t border-border/50 bg-gradient-to-b from-muted/20 via-muted/12 to-background text-sm text-muted-foreground",
         className
       )}
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div className="max-w-md space-y-2">
-            <p className="font-heading text-base font-semibold text-foreground">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 sm:px-6">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+          <div className="max-w-md space-y-3">
+            <p className="font-heading text-base font-semibold tracking-tight text-foreground">
               어린이 둥지 · Children&apos;s Nest
             </p>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-muted-foreground/95">
               브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역입니다. 안전한
               공간과 따뜻한 식사, 교육과 놀이로 한 오후를 지켜 줍니다.
             </p>

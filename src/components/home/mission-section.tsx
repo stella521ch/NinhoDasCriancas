@@ -22,7 +22,7 @@ export function MissionSection({ copy }: { copy: MissionSectionCopy }) {
           </p>
         </div>
         <div className="order-1 lg:order-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-foreground/10">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border/50 shadow-soft ring-1 ring-foreground/[0.06]">
             <Image
               src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=900&q=80"
               alt="아이들과 함께하는 활동 모습을 상징하는 플레이스홀더 이미지"

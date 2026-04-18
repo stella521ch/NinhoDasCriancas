@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function AdminLoginPage() {
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md flex-col justify-center px-4 py-16">
-      <Card className="border-border/80 shadow-md">
+      <Card>
         <CardHeader>
           <CardTitle className="font-heading text-xl">관리자 로그인</CardTitle>
           <CardDescription>

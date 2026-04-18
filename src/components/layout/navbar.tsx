@@ -31,8 +31,10 @@ function NavLink({
       href={href}
       onClick={onNavigate}
       className={cn(
-        "text-sm font-medium transition-colors hover:text-primary",
-        active ? "text-primary" : "text-foreground/80"
+        "rounded-full px-3 py-1.5 text-lg font-medium transition-colors",
+        active
+          ? "bg-primary/10 text-primary"
+          : "text-foreground/75 hover:bg-muted/60 hover:text-foreground"
       )}
     >
       {label}
@@ -51,19 +53,19 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
+      <div className="mx-auto flex h-[4.875rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="group flex flex-col leading-tight">
-          <span className="font-heading text-lg font-semibold tracking-tight text-foreground">
+          <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
           </span>
-          <span className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-[0.9rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
             Children&apos;s Nest
           </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-2 md:flex"
           aria-label="주요 메뉴"
         >
           {navItems.map((item) => (
@@ -72,8 +74,8 @@ export function Navbar() {
           <Link
             href="/donate"
             className={cn(
-              buttonVariants({ size: "sm" }),
-              "shadow-glow-sm transition-shadow hover:shadow-glow"
+              buttonVariants({ size: "default" }),
+              "ml-4 text-base shadow-glow-sm transition-[box-shadow,transform] hover:shadow-glow"
             )}
           >
             후원하기
@@ -83,7 +85,10 @@ export function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <Link
             href="/donate"
-            className={cn(buttonVariants({ size: "sm" }), "shadow-glow-sm")}
+            className={cn(
+              buttonVariants({ size: "default" }),
+              "text-base shadow-glow-sm"
+            )}
           >
             후원
           </Link>
@@ -97,7 +102,7 @@ export function Navbar() {
             aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? <X className="size-6" /> : <Menu className="size-6" />}
           </Button>
         </div>
       </div>
@@ -105,7 +110,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-border/60 bg-background/95 px-4 py-4 backdrop-blur-md md:hidden"
+          className="border-t border-border/50 bg-background/95 px-4 py-5 backdrop-blur-xl md:hidden"
         >
           <nav className="flex flex-col gap-4" aria-label="모바일 메뉴">
             {navItems.map((item) => (

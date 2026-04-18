@@ -11,9 +11,9 @@ export function DonationCtaSection({ copy }: { copy: DonationCtaCopy }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden border-t border-border/60 bg-muted/30 py-20 sm:py-28">
+    <section className="relative overflow-hidden border-t border-border/50 bg-gradient-to-b from-muted/25 via-background to-muted/15 py-20 sm:py-28">
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-brand opacity-50"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-brand opacity-[0.42]"
         aria-hidden
       />
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">

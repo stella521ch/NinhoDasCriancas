@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
 
 import { Footer, Navbar } from "@/components/layout";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-heading",
-  display: "swap",
-});
 
 const siteName = "어린이 둥지 | Children's Nest";
 
@@ -52,11 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ko"
-      className={cn("theme min-h-full", dmSans.variable, fraunces.variable)}
-    >
-      <body className="flex min-h-dvh flex-col font-sans antialiased">
+    <html lang="ko" className={cn("theme min-h-full")}>
+      <body className="flex min-h-dvh flex-col font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

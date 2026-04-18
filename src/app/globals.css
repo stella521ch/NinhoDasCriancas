@@ -1,5 +1,15 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
+@font-face {
+  font-family: "윤초록우산어린이 만세";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
+    format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,19 +20,24 @@
   }
 
   .glass-panel {
-    background: oklch(0.99 0.01 95 / 0.72);
-    backdrop-filter: blur(14px);
-    border: 1px solid oklch(1 0 0 / 0.45);
-    box-shadow: 0 24px 60px -28px oklch(0.35 0.04 55 / 0.18);
+    background: linear-gradient(
+      155deg,
+      oklch(0.995 0.009 95 / 0.82) 0%,
+      oklch(0.985 0.012 95 / 0.68) 100%
+    );
+    backdrop-filter: blur(18px) saturate(1.12);
+    border: 1px solid oklch(1 0 0 / 0.52);
+    box-shadow:
+      0 1px 0 0 oklch(1 0 0 / 0.45) inset,
+      0 32px 72px -36px oklch(0.3 0.035 55 / 0.22),
+      0 10px 28px -14px oklch(0.35 0.04 55 / 0.12);
   }
 }
 
 @layer base {
-  .theme {
-    /* next/font이 주입한 --font-sans 유지; 제목은 html의 --font-heading 사용 */
-    --font-sans: var(--font-sans);
-  }
   :root {
+    --font-sans: "윤초록우산어린이 만세", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "윤초록우산어린이 만세", ui-sans-serif, system-ui, sans-serif;
     /* 말 없는 성경 5색 톤: 린넨·먹·올리브·금·테라코타를 세련되게 재해석 */
     --background: oklch(0.985 0.012 95);
     --foreground: oklch(0.28 0.035 55);
@@ -40,15 +55,15 @@
     --accent-foreground: oklch(0.3 0.04 55);
     --destructive: oklch(0.52 0.18 28);
     --destructive-foreground: oklch(0.99 0.01 95);
-    --border: oklch(0.9 0.02 88);
-    --input: oklch(0.9 0.02 88);
+    --border: oklch(0.91 0.016 92);
+    --input: oklch(0.91 0.016 92);
     --ring: oklch(0.5 0.08 150);
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
+    --radius: 0.75rem;
     --radius-md: var(--radius);
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
@@ -103,8 +118,23 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    background-image:
+      radial-gradient(
+        120% 70% at 50% -15%,
+        oklch(0.96 0.04 145 / 0.32),
+        transparent 55%
+      ),
+      radial-gradient(
+        90% 55% at 100% 0%,
+        oklch(0.97 0.028 85 / 0.18),
+        transparent 48%
+      );
   }
   html {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  ::selection {
+    background: oklch(0.45 0.08 150 / 0.22);
+    color: var(--foreground);
   }
 }

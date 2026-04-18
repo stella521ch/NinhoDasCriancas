@@ -51,15 +51,17 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        heading: ["var(--font-heading)", "var(--font-sans)", "serif"],
+        heading: ["var(--font-heading)", "var(--font-sans)", "sans-serif"],
       },
       boxShadow: {
-        "glow-sm": "0 0 0 1px oklch(0.75 0.12 85 / 0.35), 0 8px 28px -8px oklch(0.55 0.1 150 / 0.35)",
-        glow: "0 0 0 1px oklch(0.78 0.14 85 / 0.45), 0 12px 40px -10px oklch(0.5 0.1 150 / 0.45)",
+        soft: "0 1px 2px oklch(0.28 0.03 55 / 0.05), 0 18px 40px -22px oklch(0.28 0.03 55 / 0.1)",
+        "glow-sm":
+          "0 0 0 1px oklch(0.78 0.1 85 / 0.28), 0 10px 32px -10px oklch(0.48 0.09 150 / 0.28)",
+        glow: "0 0 0 1px oklch(0.8 0.11 85 / 0.35), 0 16px 44px -12px oklch(0.45 0.09 150 / 0.38)",
       },
       backgroundImage: {
         "gradient-brand":
-          "linear-gradient(135deg, oklch(0.9 0.08 145 / 0.55) 0%, oklch(0.94 0.06 85 / 0.5) 48%, oklch(0.9 0.1 35 / 0.35) 100%)",
+          "linear-gradient(135deg, oklch(0.91 0.07 145 / 0.42) 0%, oklch(0.94 0.055 85 / 0.42) 48%, oklch(0.92 0.08 35 / 0.28) 100%)",
       },
     },
   },

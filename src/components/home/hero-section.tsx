@@ -1,13 +1,15 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
 import { buttonVariants } from "@/components/ui/button";
 import type { HeroSectionCopy } from "@/lib/data/home-page-content";
 import { cn } from "@/lib/utils";
+
+const heroBackgroundUrl =
+  "https://images.unsplash.com/photo-1587654780293-953cf1bc64b5?w=1920&q=80";
 
 export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
   const ref = useRef<HTMLElement>(null);
@@ -40,18 +42,14 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
       aria-labelledby="hero-heading"
     >
       <motion.div
-        style={{ y: yBg, scale: scaleBg }}
-        className="absolute inset-0 -z-10 will-change-transform"
+        style={{
+          y: yBg,
+          scale: scaleBg,
+          backgroundImage: `url(${heroBackgroundUrl})`,
+        }}
+        className="absolute inset-0 -z-10 bg-cover bg-center will-change-transform"
         aria-hidden
       >
-        <Image
-          src="https://images.unsplash.com/photo-1587654780293-953cf1bc64b5?w=1920&q=80"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/35 to-background" />
         <div
           className="absolute inset-0 bg-gradient-brand opacity-40 mix-blend-soft-light"
@@ -63,13 +61,13 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
         style={{ y: yContent }}
         className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-4 pb-20 pt-28 sm:px-6 sm:pb-28 sm:pt-32"
       >
-        <div className="glass-panel max-w-2xl rounded-2xl p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+        <div className="glass-panel max-w-2xl rounded-3xl p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
             {copy.heroKicker}
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 font-heading text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl"
+            className="mt-4 font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl md:text-5xl"
           >
             {copy.heroHeadingMain}
             <span className="text-primary">{copy.heroHeadingAccent}</span>
