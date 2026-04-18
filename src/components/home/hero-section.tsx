@@ -9,7 +9,7 @@ import type { HeroSectionCopy } from "@/lib/data/home-page-content";
 import { cn } from "@/lib/utils";
 
 /** 헤더 바로 아래 히어로 슬라이드 높이 (px) */
-const HERO_HEIGHT_PX = 604;
+const HERO_HEIGHT_PX = 780;
 
 const SLIDE_IMAGE_URLS = [
   "https://images.unsplash.com/photo-1587654780293-953cf1bc64b5?w=1600&q=80",
