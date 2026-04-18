@@ -11,7 +11,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "@/components/i18n/locale-provider";
 import { editorialEase } from "@/lib/motion";
 import type { Locale } from "@/lib/i18n/types";
-import { cn } from "@/lib/utils";
 
 function CountValue({
   from,
@@ -108,12 +107,7 @@ export function StatsSection() {
   return (
     <section className="border-y border-border/50 bg-gradient-to-b from-muted/25 via-muted/10 to-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p
-          className={cn(
-            "text-xs font-semibold uppercase tracking-[0.2em] text-primary",
-            locale === "ko" && "font-leo"
-          )}
-        >
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           {t.stats.kicker}
         </p>
         <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

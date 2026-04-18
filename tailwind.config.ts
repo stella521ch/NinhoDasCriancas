@@ -9,6 +9,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      /* 기본 Tailwind 단계별 +4px (0.25rem @16px) */
+      fontSize: {
+        xs: ["1rem", { lineHeight: "1.25rem" }],
+        sm: ["1.125rem", { lineHeight: "1.375rem" }],
+        base: ["1.25rem", { lineHeight: "1.625rem" }],
+        lg: ["1.375rem", { lineHeight: "1.75rem" }],
+        xl: ["1.5rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.75rem", { lineHeight: "2rem" }],
+        "3xl": ["2.125rem", { lineHeight: "2.5rem" }],
+        "4xl": ["2.5rem", { lineHeight: "2.75rem" }],
+        "5xl": ["3.25rem", { lineHeight: "1" }],
+        "6xl": ["4rem", { lineHeight: "1" }],
+        "7xl": ["4.75rem", { lineHeight: "1" }],
+        "8xl": ["6.25rem", { lineHeight: "1" }],
+        "9xl": ["8.25rem", { lineHeight: "1" }],
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",
@@ -52,7 +68,12 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "var(--font-sans)", "sans-serif"],
-        leo: ["\"Leo Hates School\"", "cursive", "system-ui", "sans-serif"],
+        leo: [
+          "\"Leo Hates School\"",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       boxShadow: {
         soft: "0 1px 2px oklch(0.28 0.03 55 / 0.05), 0 18px 40px -22px oklch(0.28 0.03 55 / 0.1)",

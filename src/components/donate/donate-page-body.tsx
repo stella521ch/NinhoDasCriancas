@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 const whyIcons = [Apple, BookOpen, HeartHandshake, PartyPopper, Building2] as const;
 
 export function DonatePageBody({ content }: { content: DonatePageContent }) {
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
   const d = t.donate;
 
   const whyPoints = d.whyPoints.map((item, i) => ({
@@ -34,12 +34,7 @@ export function DonatePageBody({ content }: { content: DonatePageContent }) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
       <header className="max-w-3xl">
-        <p
-          className={cn(
-            "text-xs font-semibold uppercase tracking-[0.2em] text-primary",
-            locale === "ko" && "font-leo"
-          )}
-        >
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           {d.kicker}
         </p>
         <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

@@ -72,10 +72,10 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-[110px] max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
         <Link href="/" className="group flex min-w-0 flex-col leading-tight">
-          <span className="font-heading text-[1.375rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
+          <span className="font-heading text-[1.625rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
           </span>
-          <span className="font-leo text-[0.95rem] font-normal tracking-[0.12em] text-muted-foreground">
+          <span className="text-[1.2rem] font-normal tracking-[0.12em] text-muted-foreground">
             Children&apos;s Nest
           </span>
         </Link>

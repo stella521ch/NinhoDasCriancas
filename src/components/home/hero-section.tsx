@@ -118,7 +118,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
         >
           <motion.p
             variants={overlayItem}
-            className="font-leo text-xs font-semibold uppercase tracking-[0.2em] text-white/90"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-white/90"
           >
             {copy.heroKicker}
           </motion.p>

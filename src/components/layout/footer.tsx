@@ -32,7 +32,7 @@ export function Footer({ className }: { className?: string }) {
                   <>
                     {parts[0]}
                     {" · "}
-                    <span className="font-leo font-normal tracking-normal">
+                    <span className="font-normal tracking-normal">
                       {parts.slice(1).join(" · ")}
                     </span>
                   </>
@@ -63,12 +63,12 @@ export function Footer({ className }: { className?: string }) {
         </div>
         <p className="text-xs text-muted-foreground/90">
           © {new Date().getFullYear()}{" "}
-          <span className="font-leo text-[0.95em] tracking-normal text-muted-foreground">
+          <span className="text-[calc(0.95em_+_4px)] tracking-normal text-muted-foreground">
             Children&apos;s Nest
           </span>
           .{" "}
           {locale === "ko" ? (
-            <span className="font-leo text-[0.95em] tracking-normal">
+            <span className="text-[calc(0.95em_+_4px)] tracking-normal">
               {t.footer.rights}
             </span>
           ) : (

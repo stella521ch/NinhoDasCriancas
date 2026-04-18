@@ -1,7 +1,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* 문막초 해반체 — 문막읍 농촌중심지활성화사업, 눈누 CDN */
+/* 문막초 해반체 — 한글·한자·전각 등만 담당 (라틴은 아래 Leo로 넘김) */
 @font-face {
   font-family: "문막초 해반체";
   font-style: normal;
@@ -9,21 +9,34 @@
   font-display: swap;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2604-1@1.0/MUNMAK_HAEBANCHE.woff2")
     format("woff2");
+  unicode-range:
+    U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF,
+    U+3000-303F, U+FF00-FFEF, U+FE30-FE4F, U+3200-321E, U+327E-327F;
 }
 
-/* Leo Hates School — OFL, CDNFonts 호스트 (영문 표기용) */
+/*
+ * Leo Hates School — dafont 배포본과 동일 계열의 웹용 woff2 (public/fonts)
+ * CDNFonts .woff는 손글씨 느낌이 다른 경우가 있어 자체 호스팅으로 통일
+ */
 @font-face {
   font-family: "Leo Hates School";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://fonts.cdnfonts.com/s/52991/Leo%20hates%20school.woff")
-    format("woff");
+  src: url("/fonts/leo-hates-school.woff2") format("woff2");
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* typography prose-lg 본문: 18px → 22px (+4px), 하위 em 비율은 그대로 상속됨 */
+  .prose.prose-lg {
+    font-size: 1.375rem;
+    line-height: 1.64;
+  }
+}
 
 @layer utilities {
   .text-balance {
@@ -47,8 +60,11 @@
 
 @layer base {
   :root {
-    --font-sans: "문막초 해반체", ui-sans-serif, system-ui, sans-serif;
-    --font-heading: "문막초 해반체", ui-sans-serif, system-ui, sans-serif;
+    /* 스택 순서: 코드포인트별로 unicode-range가 맞는 면만 적용 → 한글=문막초, 라틴=Leo */
+    --font-sans: "문막초 해반체", "Leo Hates School", ui-sans-serif, system-ui,
+      sans-serif;
+    --font-heading: "문막초 해반체", "Leo Hates School", ui-sans-serif,
+      system-ui, sans-serif;
     /* 말 없는 성경 5색 톤: 린넨·먹·올리브·금·테라코타를 세련되게 재해석 */
     --background: oklch(0.985 0.012 95);
     --foreground: oklch(0.28 0.035 55);

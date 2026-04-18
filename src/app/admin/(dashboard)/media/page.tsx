@@ -49,7 +49,7 @@ export default async function AdminMediaPage() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 p-3">
-                  <p className="break-all font-mono text-[10px] leading-snug text-muted-foreground">
+                  <p className="break-all font-mono text-[14px] leading-snug text-muted-foreground">
                     {item.publicUrl}
                   </p>
                   <MediaDeleteButton path={item.path} />

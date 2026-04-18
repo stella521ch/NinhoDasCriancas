@@ -11,7 +11,6 @@ import {
 
 import { useLocale } from "@/components/i18n/locale-provider";
 import { editorialEase } from "@/lib/motion";
-import { cn } from "@/lib/utils";
 
 const icons = [Shield, UtensilsCrossed, BookOpen, Sparkles, Heart] as const;
 
@@ -63,7 +62,7 @@ function Card({
 
 export function ProvideSection() {
   const reduce = useReducedMotion() === true;
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
 
   const cards = t.provide.cards.map((c, i) => ({
     ...c,
@@ -75,12 +74,7 @@ export function ProvideSection() {
       <section className="border-y border-border/60 bg-muted/25 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl">
-            <p
-              className={cn(
-                "text-xs font-semibold uppercase tracking-[0.2em] text-primary",
-                locale === "ko" && "font-leo"
-              )}
-            >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               {t.provide.kicker}
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -104,12 +98,7 @@ export function ProvideSection() {
     <section className="border-y border-border/60 bg-muted/25 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <p
-            className={cn(
-              "text-xs font-semibold uppercase tracking-[0.2em] text-primary",
-              locale === "ko" && "font-leo"
-            )}
-          >
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             {t.provide.kicker}
           </p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
