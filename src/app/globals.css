@@ -46,6 +46,13 @@
     text-wrap: balance;
   }
 
+  /* 문장/단어 중간 강제 줄바꿈 방지 */
+  .text-keep-words {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    line-break: strict;
+  }
+
   .glass-panel {
     background: linear-gradient(
       155deg,

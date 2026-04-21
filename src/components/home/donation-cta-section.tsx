@@ -55,13 +55,13 @@ export function DonationCtaSection({ copy }: { copy: DonationCtaCopy }) {
         >
           <motion.h2
             variants={line}
-            className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            className="text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
             {copy.donateCtaTitle}
           </motion.h2>
           <motion.p
             variants={line}
-            className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg whitespace-pre-line"
+            className="mt-4 text-keep-words text-base leading-relaxed text-muted-foreground sm:text-lg whitespace-pre-line"
           >
             {copy.donateCtaBody}
           </motion.p>

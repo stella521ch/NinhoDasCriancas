@@ -20,10 +20,10 @@ export function NewsPageView({
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           {t.news.kicker}
         </p>
-        <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="mt-2 text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {t.news.title}
         </h1>
-        <p className="mt-3 text-muted-foreground">{t.news.description}</p>
+        <p className="mt-3 text-keep-words text-muted-foreground">{t.news.description}</p>
       </header>
 
       <div className="mt-10">

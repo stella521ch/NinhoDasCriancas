@@ -125,16 +125,16 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           <motion.h1
             variants={overlayItem}
             id="hero-heading"
-            className="max-w-3xl font-heading text-2xl font-semibold leading-[1.38] tracking-tight sm:text-4xl sm:leading-[1.32] md:text-5xl md:leading-[1.28]"
+            className="max-w-[20ch] text-keep-words font-heading text-2xl font-semibold leading-[1.38] tracking-tight sm:max-w-[18ch] sm:text-4xl sm:leading-[1.32] md:max-w-[16ch] md:text-5xl md:leading-[1.28]"
           >
             {copy.heroHeadingMain}
-            <span className="text-primary drop-shadow-sm">
+            <span className="whitespace-nowrap text-primary drop-shadow-sm">
               {copy.heroHeadingAccent}
             </span>
           </motion.h1>
           <motion.p
             variants={overlayItem}
-            className="max-w-xl text-sm leading-[1.75] text-white/90 sm:text-base sm:leading-[1.72]"
+            className="max-w-[44ch] text-keep-words text-sm leading-[1.8] text-white/90 sm:text-base sm:leading-[1.78]"
           >
             {copy.heroBody}
           </motion.p>

@@ -75,7 +75,7 @@ export function Navbar() {
           <span className="font-heading text-[1.625rem] font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary/90">
             어린이 둥지
           </span>
-          <span className="text-[1.2rem] font-normal tracking-[0.12em] text-muted-foreground">
+          <span className="text-keep-words text-[1.2rem] font-normal tracking-[0.12em] text-muted-foreground">
             Ninho das Crianças
           </span>
         </Link>

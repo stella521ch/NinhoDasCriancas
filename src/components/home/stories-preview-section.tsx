@@ -24,10 +24,10 @@ export function StoriesPreviewSection({
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             {heading.storiesKicker}
           </p>
-          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mt-3 text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {heading.storiesTitle}
           </h2>
-          <p className="mt-2 max-w-xl text-muted-foreground whitespace-pre-line">
+          <p className="mt-2 max-w-[44ch] text-keep-words text-muted-foreground whitespace-pre-line">
             {heading.storiesSubtitle}
           </p>
         </div>

@@ -19,13 +19,13 @@ export function MissionSection({ copy }: { copy: MissionSectionCopy }) {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             {copy.missionKicker}
           </p>
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {copy.missionTitle}
           </h2>
-          <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">
+          <p className="text-keep-words text-lg leading-relaxed text-muted-foreground whitespace-pre-line">
             {copy.missionP1}
           </p>
-          <p className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
+          <p className="text-keep-words text-base leading-relaxed text-muted-foreground whitespace-pre-line">
             {copy.missionP2}
           </p>
         </div>
