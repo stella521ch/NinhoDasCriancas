@@ -125,7 +125,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           <motion.h1
             variants={overlayItem}
             id="hero-heading"
-            className="max-w-[20ch] text-keep-words font-heading text-2xl font-semibold leading-[1.38] tracking-tight sm:max-w-[18ch] sm:text-4xl sm:leading-[1.32] md:max-w-[16ch] md:text-5xl md:leading-[1.28]"
+            className="max-w-[22ch] text-keep-words font-heading text-2xl font-semibold leading-[1.38] tracking-tight sm:max-w-[30ch] sm:text-4xl sm:leading-[1.32] md:max-w-[38ch] md:text-5xl md:leading-[1.28] lg:max-w-[44ch]"
           >
             {copy.heroHeadingMain}
             <span className="whitespace-nowrap text-primary drop-shadow-sm">
@@ -134,7 +134,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           </motion.h1>
           <motion.p
             variants={overlayItem}
-            className="max-w-[44ch] text-keep-words text-sm leading-[1.8] text-white/90 sm:text-base sm:leading-[1.78]"
+            className="max-w-[46ch] text-keep-words text-sm leading-[1.8] text-white/90 sm:max-w-[58ch] sm:text-base sm:leading-[1.78] md:max-w-[64ch]"
           >
             {copy.heroBody}
           </motion.p>
