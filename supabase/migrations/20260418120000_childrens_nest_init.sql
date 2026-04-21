@@ -1,4 +1,4 @@
--- Children's Nest (어린이 둥지) — 초기 스키마
+-- Ninho das Crianças / 어린이 둥지 — 초기 스키마
 -- 적용: Supabase Dashboard → SQL Editor 에서 실행하거나 `supabase db push` (CLI)
 -- 공개 웹은 anon 키로 읽기만 하며, 게시글은 published 만 노출됩니다.
 -- 어드민 쓰기/초안 조회는 Service Role(서버 전용) 또는 이후 Auth + 정책으로 연결하세요.
@@ -118,7 +118,7 @@ INSERT INTO public.site_content (key, value) VALUES
   ),
   ('donate_external_url', 'https://www.globalgiving.org/'),
   ('donate_external_label', 'GlobalGiving 등 외부 플랫폼으로 후원하기'),
-  ('donate_contact_email', 'contato@childrensnest.example'),
+  ('donate_contact_email', 'contato@ninhodascriancas.example'),
   ('donate_contact_phone', '+55 (00) 0000-0000'),
   (
     'donate_contact_note',

@@ -45,7 +45,7 @@ CREATE POLICY "media_authenticated_delete"
 -- 홈 마케팅 문구 (기본값은 앱 기존 하드코피와 동일)
 -- ---------------------------------------------------------------------------
 INSERT INTO public.site_content (key, value) VALUES
-  ('home_hero_kicker', 'Children''s Nest · Brazil'),
+  ('home_hero_kicker', 'Ninho das Crianças · Brazil'),
   ('home_hero_heading_main', '아이들이 안전하게 머물 수 있는 '),
   ('home_hero_heading_accent', '방과 후 둥지'),
   ('home_hero_body', '하교 후 빈 시간을 안전하게 채우고, 식사·학습·놀이와 정서적 돌봄으로 하루를 지켜 주는 공간입니다.'),

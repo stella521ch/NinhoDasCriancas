@@ -2,7 +2,7 @@ import type { HomeMarketingContent } from "@/lib/data/home-marketing-shared";
 
 /** 포르투갈어(브라질) 홈 마케팅 문구 — `locale === "pt"`일 때 CMS 한국어 대신 표시 */
 export const HOME_MARKETING_PT: HomeMarketingContent = {
-  heroKicker: "Children's Nest · Brasil",
+  heroKicker: "Ninho das Crianças · Brasil",
   heroHeadingMain: "Um espaço pós-escola onde as crianças podem ",
   heroHeadingAccent: "ficar em segurança",
   heroBody:

@@ -103,7 +103,7 @@ const ko: PublicUiStrings = {
     menuClose: "메뉴 닫기",
   },
   footer: {
-    title: "어린이 둥지 · Children's Nest",
+    title: "어린이 둥지 · Ninho das Crianças",
     description:
       "브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역입니다. 안전한 공간과 따뜻한 식사, 교육과 놀이로 한 오후를 지켜 줍니다.",
     adminLogin: "관리자 로그인",
@@ -296,7 +296,7 @@ const pt: PublicUiStrings = {
     menuClose: "Fechar menu",
   },
   footer: {
-    title: "Ninho das Crianças · Children's Nest",
+    title: "Ninho das Crianças",
     description:
       "Acolhimento pós-escola para crianças em situação de vulnerabilidade no Brasil. Um lugar seguro, refeições, aprendizado e brincadeira para proteger a tarde.",
     adminLogin: "Entrar (admin)",

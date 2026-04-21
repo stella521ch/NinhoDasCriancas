@@ -74,7 +74,7 @@ export function pickStoriesHeadingCopy(
 }
 
 export const HOME_MARKETING_DEFAULTS_KO: HomeMarketingContent = {
-  heroKicker: "Children's Nest · Brazil",
+  heroKicker: "Ninho das Crianças · Brazil",
   heroHeadingMain: "아이들이 안전하게 머물 수 있는 ",
   heroHeadingAccent: "방과 후 둥지",
   heroBody:

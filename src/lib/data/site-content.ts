@@ -11,7 +11,7 @@ const DEFAULTS: DonatePageContent = {
     "은행·계좌 정보는 Supabase `site_content` 키 `donate_bank_info`에 등록하면 이곳에 표시됩니다. (예: Banco Example · Ag 0000 · Cc 00000-0 · PIX: exemplo@email.com)",
   externalUrl: "https://www.globalgiving.org/",
   externalLabel: "GlobalGiving 등 외부 플랫폼으로 후원하기",
-  contactEmail: "contato@childrensnest.example",
+  contactEmail: "contato@ninhodascriancas.example",
   contactPhone: "+55 (00) 0000-0000",
   contactNote:
     "WhatsApp 또는 이메일로 후원·봉사 문의를 남겨 주세요. 관리자 대시보드「후원 문구」에서 수정할 수 있습니다.",

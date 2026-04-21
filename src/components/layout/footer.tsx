@@ -64,7 +64,7 @@ export function Footer({ className }: { className?: string }) {
         <p className="text-xs text-muted-foreground/90">
           © {new Date().getFullYear()}{" "}
           <span className="text-[calc(0.95em_+_4px)] tracking-normal text-muted-foreground">
-            Children&apos;s Nest
+            Ninho das Crianças
           </span>
           .{" "}
           {locale === "ko" ? (

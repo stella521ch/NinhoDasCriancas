@@ -76,7 +76,7 @@ export function Navbar() {
             어린이 둥지
           </span>
           <span className="text-[1.2rem] font-normal tracking-[0.12em] text-muted-foreground">
-            Children&apos;s Nest
+            Ninho das Crianças
           </span>
         </Link>
 

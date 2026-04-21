@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
-const siteName = "어린이 둥지 | Children's Nest";
+const siteName = "어린이 둥지 | Ninho das Crianças";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s · ${siteName}`,
   },
   description:
-    "브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역 어린이 둥지(Children's Nest) 공식 사이트입니다.",
+    "브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역 어린이 둥지(Ninho das Crianças) 공식 사이트입니다.",
   openGraph: {
     title: siteName,
     description:

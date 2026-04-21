@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "소개",
   description:
-    "어린이 둥지(Children's Nest) 미션, 하루의 흐름, 제공 프로그램, 최신 소식을 한눈에 만나 보세요.",
+    "어린이 둥지(Ninho das Crianças) 미션, 하루의 흐름, 제공 프로그램, 최신 소식을 한눈에 만나 보세요.",
 };
 
 export default async function HomePage() {
