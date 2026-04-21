@@ -8,12 +8,6 @@ import { cn } from "@/lib/utils";
 export function Footer({ className }: { className?: string }) {
   const { locale, t } = useLocale();
 
-  const footerLinks = [
-    { href: "/", label: t.nav.intro },
-    { href: "/news", label: t.nav.news },
-    { href: "/donate", label: t.nav.donate },
-  ] as const;
-
   return (
     <footer
       className={cn(
@@ -44,15 +38,6 @@ export function Footer({ className }: { className?: string }) {
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-medium text-foreground/80 underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {link.label}
-              </Link>
-            ))}
             <Link
               href="/admin/login"
               className="font-medium text-foreground/50 underline-offset-4 transition-colors hover:text-foreground/80 hover:underline"
