@@ -43,7 +43,7 @@ export function DailyFlowSection() {
       >
         {t.dailyFlow.steps.map((step, i) => (
           <motion.li
-            key={step.title}
+            key={i}
             className="relative pb-12 last:pb-0"
             variants={reduce ? undefined : itemVariants}
           >

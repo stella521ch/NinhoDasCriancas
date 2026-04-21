@@ -83,8 +83,8 @@ export function ProvideSection() {
             <p className="mt-4 text-muted-foreground">{t.provide.subtitleReduce}</p>
           </div>
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {cards.map((entry) => (
-              <li key={entry.title}>
+            {cards.map((entry, idx) => (
+              <li key={idx}>
                 <Card {...entry} reduce={reduce} />
               </li>
             ))}
@@ -114,9 +114,9 @@ export function ProvideSection() {
           whileInView="show"
           viewport={{ once: true, margin: "-60px", amount: 0.2 }}
         >
-          {cards.map((entry) => (
+          {cards.map((entry, idx) => (
             <motion.li
-              key={entry.title}
+              key={idx}
               variants={item}
               className="h-full [list-style:none]"
             >
