@@ -1,37 +1,13 @@
 import {
-  HOME_FIELD_TO_DB_KEY,
-  type HomeMarketingField,
-} from "@/lib/constants/home-page-content-keys";
-import {
   HOME_MARKETING_DEFAULTS_KO,
   type HomeMarketingContent,
 } from "@/lib/data/home-marketing-shared";
-import { getSupabaseServer } from "@/lib/supabase/supabase-server-optional";
-import { normalizeBrandName } from "@/lib/text/normalize-brand";
 
+/**
+ * 홈 마케팅 문구는 코드 상수만 사용합니다.
+ * (이전에는 Supabase `site_content`에서 덮어썼지만, 줄바꿈·강조 등 포맷 제어가
+ *  어려워 코드 단일 소스로 정리했습니다. 포어 버전은 `home-marketing-pt.ts`.)
+ */
 export async function getHomeMarketingContent(): Promise<HomeMarketingContent> {
-  const supabase = getSupabaseServer();
-  const keys = Object.values(HOME_FIELD_TO_DB_KEY);
-
-  if (supabase) {
-    const { data, error } = await supabase
-      .from("site_content")
-      .select("key, value")
-      .in("key", keys);
-
-    if (!error && data != null) {
-      const map = new Map(
-        data.map((r) => [r.key as string, r.value as string | null | undefined])
-      );
-      const out = { ...HOME_MARKETING_DEFAULTS_KO };
-      for (const field of Object.keys(HOME_FIELD_TO_DB_KEY) as HomeMarketingField[]) {
-        const dbKey = HOME_FIELD_TO_DB_KEY[field];
-        const v = map.get(dbKey);
-        if (v != null && v !== "") out[field] = normalizeBrandName(v);
-      }
-      return out;
-    }
-  }
-
   return { ...HOME_MARKETING_DEFAULTS_KO };
 }

@@ -8,7 +8,6 @@ export const dynamic = "force-dynamic";
 const adminNav = [
   { href: "/admin", label: "대시보드" },
   { href: "/admin/posts", label: "게시글" },
-  { href: "/admin/pages", label: "페이지 문구" },
   { href: "/admin/content", label: "후원 정보" },
   { href: "/admin/media", label: "미디어" },
 ] as const;

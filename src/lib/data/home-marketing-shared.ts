@@ -1,4 +1,23 @@
-import type { HomeMarketingField } from "@/lib/constants/home-page-content-keys";
+export type HomeMarketingField =
+  | "heroKicker"
+  | "heroHeadingMain"
+  | "heroHeadingAccent"
+  | "heroBody"
+  | "heroCtaSecondaryLabel"
+  | "heroCtaSecondaryHref"
+  | "heroCtaPrimaryLabel"
+  | "heroCtaPrimaryHref"
+  | "missionKicker"
+  | "missionTitle"
+  | "missionP1"
+  | "missionP2"
+  | "donateCtaTitle"
+  | "donateCtaBody"
+  | "donateCtaPrimaryLabel"
+  | "donateCtaSecondaryLabel"
+  | "storiesKicker"
+  | "storiesTitle"
+  | "storiesSubtitle";
 
 export type HomeMarketingContent = Record<HomeMarketingField, string>;
 
