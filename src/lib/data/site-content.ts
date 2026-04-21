@@ -3,6 +3,7 @@ import {
   type DonateContentField,
 } from "@/lib/constants/donate-page-content-keys";
 import { getSupabaseServer } from "@/lib/supabase/supabase-server-optional";
+import { normalizeBrandName } from "@/lib/text/normalize-brand";
 
 export type DonatePageContent = Record<DonateContentField, string>;
 
@@ -34,24 +35,24 @@ export async function getDonatePageContent(): Promise<DonatePageContent> {
         data.map((r) => [r.key as string, r.value as string | null | undefined])
       );
       return {
-        bankInfo:
-          map.get(DONATE_FIELD_TO_DB_KEY.bankInfo) ?? DEFAULTS.bankInfo,
+        bankInfo: normalizeBrandName(
+          map.get(DONATE_FIELD_TO_DB_KEY.bankInfo) ?? DEFAULTS.bankInfo
+        ),
         externalUrl:
           map.get(DONATE_FIELD_TO_DB_KEY.externalUrl) ?? DEFAULTS.externalUrl,
-        externalLabel:
-          map.get(DONATE_FIELD_TO_DB_KEY.externalLabel) ??
-          DEFAULTS.externalLabel,
+        externalLabel: normalizeBrandName(
+          map.get(DONATE_FIELD_TO_DB_KEY.externalLabel) ?? DEFAULTS.externalLabel
+        ),
         contactEmail:
-          map.get(DONATE_FIELD_TO_DB_KEY.contactEmail) ??
-          DEFAULTS.contactEmail,
+          map.get(DONATE_FIELD_TO_DB_KEY.contactEmail) ?? DEFAULTS.contactEmail,
         contactPhone:
-          map.get(DONATE_FIELD_TO_DB_KEY.contactPhone) ??
-          DEFAULTS.contactPhone,
-        contactNote:
-          map.get(DONATE_FIELD_TO_DB_KEY.contactNote) ??
-          DEFAULTS.contactNote,
-        waysIntro:
-          map.get(DONATE_FIELD_TO_DB_KEY.waysIntro) ?? DEFAULTS.waysIntro,
+          map.get(DONATE_FIELD_TO_DB_KEY.contactPhone) ?? DEFAULTS.contactPhone,
+        contactNote: normalizeBrandName(
+          map.get(DONATE_FIELD_TO_DB_KEY.contactNote) ?? DEFAULTS.contactNote
+        ),
+        waysIntro: normalizeBrandName(
+          map.get(DONATE_FIELD_TO_DB_KEY.waysIntro) ?? DEFAULTS.waysIntro
+        ),
       };
     }
   }

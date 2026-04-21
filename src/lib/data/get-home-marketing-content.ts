@@ -7,6 +7,7 @@ import {
   type HomeMarketingContent,
 } from "@/lib/data/home-marketing-shared";
 import { getSupabaseServer } from "@/lib/supabase/supabase-server-optional";
+import { normalizeBrandName } from "@/lib/text/normalize-brand";
 
 export async function getHomeMarketingContent(): Promise<HomeMarketingContent> {
   const supabase = getSupabaseServer();
@@ -26,7 +27,7 @@ export async function getHomeMarketingContent(): Promise<HomeMarketingContent> {
       for (const field of Object.keys(HOME_FIELD_TO_DB_KEY) as HomeMarketingField[]) {
         const dbKey = HOME_FIELD_TO_DB_KEY[field];
         const v = map.get(dbKey);
-        if (v != null && v !== "") out[field] = v;
+        if (v != null && v !== "") out[field] = normalizeBrandName(v);
       }
       return out;
     }
