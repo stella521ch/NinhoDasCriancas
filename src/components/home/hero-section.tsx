@@ -134,7 +134,7 @@ export function HeroSection({ copy }: { copy: HeroSectionCopy }) {
           </motion.h1>
           <motion.p
             variants={overlayItem}
-            className="max-w-[46ch] text-keep-words text-sm leading-[1.8] text-white/90 sm:max-w-[58ch] sm:text-base sm:leading-[1.78] md:max-w-[64ch]"
+            className="max-w-[46ch] whitespace-pre-line text-keep-words text-sm leading-[1.8] text-white/90 sm:max-w-[58ch] sm:text-base sm:leading-[1.78] md:max-w-[64ch]"
           >
             {copy.heroBody}
           </motion.p>

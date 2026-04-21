@@ -23,7 +23,7 @@ export function NewsPageView({
         <h1 className="mt-2 text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {t.news.title}
         </h1>
-        <p className="mt-3 text-keep-words text-muted-foreground">{t.news.description}</p>
+        <p className="mt-3 whitespace-pre-line text-keep-words text-muted-foreground">{t.news.description}</p>
       </header>
 
       <div className="mt-10">

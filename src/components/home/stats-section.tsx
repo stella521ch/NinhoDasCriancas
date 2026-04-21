@@ -113,7 +113,7 @@ export function StatsSection() {
         <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {t.stats.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-muted-foreground">{t.stats.lead}</p>
+        <p className="mt-4 max-w-2xl whitespace-pre-line text-keep-words text-muted-foreground">{t.stats.lead}</p>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (

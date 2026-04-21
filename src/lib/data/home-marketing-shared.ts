@@ -78,7 +78,7 @@ export const HOME_MARKETING_DEFAULTS_KO: HomeMarketingContent = {
   heroHeadingMain: "아이들이 안전하게 머물 수 있는 ",
   heroHeadingAccent: "방과 후 둥지",
   heroBody:
-    "하교 후 빈 시간을 안전하게 채우고, 식사·학습·놀이와 정서적 돌봄으로 하루를 지켜 주는 공간입니다.",
+    "하교 후 빈 시간을 안전하게 채우고,\n식사·학습·놀이와 정서적 돌봄으로 하루를 지켜 주는 공간입니다.",
   heroCtaSecondaryLabel: "소개 더 보기",
   heroCtaSecondaryHref: "#mission",
   heroCtaPrimaryLabel: "후원하기",
@@ -86,16 +86,16 @@ export const HOME_MARKETING_DEFAULTS_KO: HomeMarketingContent = {
   missionKicker: "Mission",
   missionTitle: "왜 어린이 둥지인가요?",
   missionP1:
-    "방과 후 시간은 아이에게는 자유이지만, 때로는 위험과 외로움으로 이어집니다. 어린이 둥지는 지역 안에서 신뢰할 수 있는 방과 후 공동체를 세우고, 한 끼와 한 마디가 쌓여 내일의 자신감이 되도록 돕습니다.",
+    "방과 후 시간은 아이에게는 자유이지만,\n때로는 위험과 외로움으로 이어집니다.\n어린이 둥지는 지역 안에서 신뢰할 수 있는 방과 후 공동체를 세우고,\n한 끼와 한 마디가 쌓여 내일의 자신감이 되도록 돕습니다.",
   missionP2:
-    "2018년부터 이어 온 관계 속에서 2025년, '어린이 둥지'라는 이름으로 공간을 정비했습니다. 후원과 기도로 함께해 주시는 분들이 있기에 매주 문을 열 수 있습니다.",
+    "2018년부터 이어 온 관계 속에서 2025년,\n'어린이 둥지'라는 이름으로 공간을 정비했습니다.\n후원과 기도로 함께해 주시는 분들이 있기에 매주 문을 열 수 있습니다.",
   donateCtaTitle: "한 아이의 오후를 안전하게 지켜주세요",
   donateCtaBody:
-    "후원은 식재료·교재·공간 유지비로 이어집니다. 정기 후원은 계획을 세우는 데 큰 도움이 됩니다.",
+    "후원은 식재료·교재·공간 유지비로 이어집니다.\n정기 후원은 계획을 세우는 데 큰 도움이 됩니다.",
   donateCtaPrimaryLabel: "후원 방법 보기",
   donateCtaSecondaryLabel: "소식 먼저 읽기",
   storiesKicker: "Stories",
   storiesTitle: "최신 소식",
   storiesSubtitle:
-    "Supabase에 게시된 글이 있으면 자동으로 가져옵니다. 없을 때는 샘플 소식을 보여 드립니다.",
+    "Supabase에 게시된 글이 있으면 자동으로 가져옵니다.\n없을 때는 샘플 소식을 보여 드립니다.",
 };

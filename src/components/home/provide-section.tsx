@@ -80,7 +80,7 @@ export function ProvideSection() {
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {t.provide.title}
             </h2>
-            <p className="mt-4 text-muted-foreground">{t.provide.subtitleReduce}</p>
+            <p className="mt-4 whitespace-pre-line text-keep-words text-muted-foreground">{t.provide.subtitleReduce}</p>
           </div>
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {cards.map((entry, idx) => (
@@ -104,7 +104,7 @@ export function ProvideSection() {
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {t.provide.title}
           </h2>
-          <p className="mt-4 text-muted-foreground">{t.provide.subtitle}</p>
+          <p className="mt-4 whitespace-pre-line text-keep-words text-muted-foreground">{t.provide.subtitle}</p>
         </div>
 
         <motion.ul

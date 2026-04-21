@@ -40,7 +40,7 @@ export function DonatePageBody({ content }: { content: DonatePageContent }) {
         <h1 className="mt-2 text-keep-words font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {d.title}
         </h1>
-        <p className="mt-3 text-keep-words text-muted-foreground">{d.intro}</p>
+        <p className="mt-3 whitespace-pre-line text-keep-words text-muted-foreground">{d.intro}</p>
       </header>
 
       <section
@@ -54,7 +54,7 @@ export function DonatePageBody({ content }: { content: DonatePageContent }) {
         >
           {d.whyHeading}
         </h2>
-        <p className="mt-4 max-w-3xl text-keep-words text-muted-foreground">{d.whyLead}</p>
+        <p className="mt-4 max-w-3xl whitespace-pre-line text-keep-words text-muted-foreground">{d.whyLead}</p>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {whyPoints.map(({ title, body, icon: Icon }, i) => (
             <li
@@ -86,7 +86,7 @@ export function DonatePageBody({ content }: { content: DonatePageContent }) {
         >
           {d.useHeading}
         </h2>
-        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">{d.useLead}</p>
+        <p className="mt-4 max-w-2xl whitespace-pre-line text-keep-words text-sm text-muted-foreground">{d.useLead}</p>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {d.useOfFunds.map((row, i) => (
             <li
@@ -114,7 +114,7 @@ export function DonatePageBody({ content }: { content: DonatePageContent }) {
         >
           {d.waysHeading}
         </h2>
-        <p className="mt-4 max-w-3xl text-keep-words text-muted-foreground">{content.waysIntro}</p>
+        <p className="mt-4 max-w-3xl whitespace-pre-line text-keep-words text-muted-foreground">{content.waysIntro}</p>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm">

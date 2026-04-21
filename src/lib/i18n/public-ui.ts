@@ -105,7 +105,7 @@ const ko: PublicUiStrings = {
   footer: {
     title: "어린이 둥지 · Ninho das Crianças",
     description:
-      "브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역입니다. 안전한 공간과 따뜻한 식사, 교육과 놀이로 한 오후를 지켜 줍니다.",
+      "브라질 취약 환경의 아이들을 위한 방과 후 돌봄 사역입니다.\n안전한 공간과 따뜻한 식사,\n교육과 놀이로 한 오후를 지켜 줍니다.",
     adminLogin: "관리자 로그인",
     rights: "All rights reserved.",
   },
@@ -113,7 +113,7 @@ const ko: PublicUiStrings = {
     kicker: "What we provide",
     title: "무엇을 제공하나요?",
     subtitle:
-      "다섯 가지 축으로 하루를 설계합니다. 모션은 스크롤에 맞춰 가볍게 등장합니다.",
+      "다섯 가지 축으로 하루를 설계합니다.\n모션은 스크롤에 맞춰 가볍게 등장합니다.",
     subtitleReduce: "다섯 가지 축으로 하루를 설계합니다.",
     cards: [
       {
@@ -168,7 +168,7 @@ const ko: PublicUiStrings = {
   stats: {
     kicker: "By the numbers",
     title: "숫자로 보는 둥지",
-    lead: "후원과 기도로 쌓인 시간입니다. 실제 수치는 운영 상황에 따라 갱신됩니다.",
+    lead: "후원과 기도로 쌓인 시간입니다.\n실제 수치는 운영 상황에 따라 갱신됩니다.",
     labels: {
       y2018: "사역 시작",
       y2025: "어린이 둥지 설립",
@@ -181,7 +181,7 @@ const ko: PublicUiStrings = {
     kicker: "News",
     title: "뉴스",
     description:
-      "게시 상태가 'published'인 글만 표시합니다. Supabase에 데이터가 없으면 샘플 글이 보입니다.",
+      "게시 상태가 'published'인 글만 표시합니다.\nSupabase에 데이터가 없으면 샘플 글이 보입니다.",
     emptyCategory: "이 카테고리에 표시할 글이 없습니다.",
     tabsAria: "뉴스 카테고리",
     tabLabels: {
@@ -212,10 +212,10 @@ const ko: PublicUiStrings = {
     kicker: "Donate",
     title: "후원 안내",
     intro:
-      "아이들의 오후를 지키는 데 쓰이는 후원의 흐름과 방법을 투명하게 안내합니다. 계좌·링크·문의는 관리자 대시보드의「후원 문구」메뉴에서 수정할 수 있습니다.",
+      "아이들의 오후를 지키는 데 쓰이는 후원의 흐름과 방법을 투명하게 안내합니다.\n계좌·링크·문의는 관리자 대시보드의「후원 문구」메뉴에서 수정할 수 있습니다.",
     whyHeading: "왜 후원이 필요한가요?",
     whyLead:
-      "취약 환경의 아이들에게 방과 후 시간은 곧 안전과 자존감입니다. 후원은 아래 영역으로 균형 있게 배분됩니다.",
+      "취약 환경의 아이들에게 방과 후 시간은 곧 안전과 자존감입니다.\n후원은 아래 영역으로 균형 있게 배분됩니다.",
     whyPoints: [
       {
         title: "식사 · 간식",
@@ -240,7 +240,7 @@ const ko: PublicUiStrings = {
     ],
     useHeading: "후원금은 어디에 쓰이나요?",
     useLead:
-      "비율은 운영 계획에 따라 조정될 수 있는 예시입니다. 아이콘 카드로 한눈에 보실 수 있습니다.",
+      "비율은 운영 계획에 따라 조정될 수 있는 예시입니다.\n아이콘 카드로 한눈에 보실 수 있습니다.",
     useOfFunds: [
       { label: "식재료 · 식사", pct: "32%", note: "따뜻한 한 끼와 간식" },
       { label: "교육 · 활동", pct: "28%", note: "재료·강사·프로그램" },
@@ -298,7 +298,7 @@ const pt: PublicUiStrings = {
   footer: {
     title: "Ninho das Crianças",
     description:
-      "Acolhimento pós-escola para crianças em situação de vulnerabilidade no Brasil. Um lugar seguro, refeições, aprendizado e brincadeira para proteger a tarde.",
+      "Acolhimento pós-escola para crianças em situação de vulnerabilidade no Brasil.\nUm lugar seguro, refeições,\naprendizado e brincadeira para proteger a tarde.",
     adminLogin: "Entrar (admin)",
     rights: "Todos os direitos reservados.",
   },
@@ -306,7 +306,7 @@ const pt: PublicUiStrings = {
     kicker: "O que oferecemos",
     title: "O que oferecemos?",
     subtitle:
-      "Organizamos o dia em cinco eixos. Os blocos aparecem suavemente conforme você rola a página.",
+      "Organizamos o dia em cinco eixos.\nOs blocos aparecem suavemente conforme você rola a página.",
     subtitleReduce: "Organizamos o dia em cinco eixos.",
     cards: [
       {
@@ -361,7 +361,7 @@ const pt: PublicUiStrings = {
   stats: {
     kicker: "Em números",
     title: "O Ninho em números",
-    lead: "Tempo construído com doação e oração. Os valores podem mudar conforme a operação.",
+    lead: "Tempo construído com doação e oração.\nOs valores podem mudar conforme a operação.",
     labels: {
       y2018: "Início do trabalho",
       y2025: "Fundação do Ninho",
@@ -374,7 +374,7 @@ const pt: PublicUiStrings = {
     kicker: "Notícias",
     title: "Notícias",
     description:
-      "Mostramos apenas posts com status 'published'. Se não houver dados no Supabase, você verá exemplos.",
+      "Mostramos apenas posts com status 'published'.\nSe não houver dados no Supabase, você verá exemplos.",
     emptyCategory: "Não há posts nesta categoria.",
     tabsAria: "Categorias de notícias",
     tabLabels: {
@@ -406,10 +406,10 @@ const pt: PublicUiStrings = {
     kicker: "Apoio",
     title: "Como apoiar",
     intro:
-      "Transparência sobre para onde vai sua doação e como contribuir. Conta, links e texto de contato podem ser editados no painel em “Conteúdo de doação”.",
+      "Transparência sobre para onde vai sua doação e como contribuir.\nConta, links e texto de contato podem ser editados no painel em “Conteúdo de doação”.",
     whyHeading: "Por que doar?",
     whyLead:
-      "Para crianças em vulnerabilidade, o pós-escola é segurança e autoestima. A doação se distribui de forma equilibrada nas áreas abaixo.",
+      "Para crianças em vulnerabilidade, o pós-escola é segurança e autoestima.\nA doação se distribui de forma equilibrada nas áreas abaixo.",
     whyPoints: [
       {
         title: "Refeições e lanches",
@@ -434,7 +434,7 @@ const pt: PublicUiStrings = {
     ],
     useHeading: "Para onde vai a doação?",
     useLead:
-      "Percentuais de exemplo, sujeitos ao planejamento. Visão rápida em cartões.",
+      "Percentuais de exemplo, sujeitos ao planejamento.\nVisão rápida em cartões.",
     useOfFunds: [
       { label: "Alimentação", pct: "32%", note: "Refeições e lanches" },
       { label: "Educação e atividades", pct: "28%", note: "Material e programas" },

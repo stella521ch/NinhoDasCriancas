@@ -33,7 +33,7 @@ export function Footer({ className }: { className?: string }) {
                 );
               })()}
             </p>
-            <p className="leading-relaxed text-muted-foreground/95">
+            <p className="whitespace-pre-line text-keep-words leading-relaxed text-muted-foreground/95">
               {t.footer.description}
             </p>
           </div>
